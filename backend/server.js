@@ -4,6 +4,14 @@ const { getFundamentusData } = require('./fundamentusService.js.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Middleware para habilitar CORS
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
 // Rota principal para todos os dados
 app.get('/all/:ticker', async (req, res) => {
   const { ticker } = req.params;
@@ -73,4 +81,4 @@ app.get('/help', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`API rodando em http://localhost:${PORT}`);
-}); 
+});

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const fundamentusRoutes = require('./routes/fundamentusRoutes');
 const logger = require('./middlewares/logger');

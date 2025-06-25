@@ -1,8 +1,12 @@
 const express = require('express');
 const fundamentusRoutes = require('./routes/fundamentusRoutes');
+const logger = require('./middlewares/logger');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Middleware para log
+app.use(logger);
 
 // Middleware para habilitar CORS
 app.use((req, res, next) => {

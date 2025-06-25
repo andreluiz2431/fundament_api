@@ -24,7 +24,7 @@
 - [x] Adotar uma estrutura `config/` para arquivos de configuração
 - [x] Centralizar variáveis de ambiente em um arquivo `.env`
 - [x] Documentar a estrutura de pastas no README
-- [ ] Adicionar scripts npm para facilitar tarefas comuns (start, test, lint)
+- [x] Adicionar scripts npm para facilitar tarefas comuns (start, test, lint)
 
 ## 4. Novos Endpoints/Funções
 - [ ] Endpoint para retornar múltiplos tickers de uma vez

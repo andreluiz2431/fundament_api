@@ -18,7 +18,7 @@
 - [ ] Adicionar HTTPS no deploy (quando aplicável)
 
 ## 3. Organização do Projeto
-- [ ] Separar arquivos de rotas, controladores e serviços
+- [x] Separar arquivos de rotas, controladores e serviços
 - [ ] Criar uma pasta `middlewares` para middlewares de autenticação, logs, etc.
 - [ ] Criar uma pasta `utils` para funções utilitárias
 - [ ] Adotar uma estrutura `config/` para arquivos de configuração

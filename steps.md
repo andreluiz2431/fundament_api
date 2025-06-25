@@ -10,7 +10,7 @@
 - [ ] Adicionar variáveis de ambiente para configurações sensíveis
 
 ## 2. Segurança
-- [ ] Implementar autenticação JWT para proteger endpoints sensíveis
+- [x] Implementar autenticação JWT para proteger endpoints sensíveis
 - [ ] Implementar autenticação via API Key para acesso à API
 - [ ] Adicionar controle de permissões para diferentes tipos de usuários
 - [ ] Implementar limitação de requisições (rate limiting)

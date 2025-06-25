@@ -2,10 +2,60 @@
 
 API para buscar indicadores fundamentalistas de ações e FIIs diretamente do site Fundamentus.
 
+## Autenticação JWT
+
+A rota `/all/:ticker` é protegida por autenticação JWT. Para acessar, é necessário obter um token JWT válido usando a rota `/login`.
+
+### Como obter um token JWT
+
+Faça um POST para `/login` com um JSON contendo `user` e `password` (qualquer valor, apenas para exemplo):
+
+**Exemplo usando PowerShell:**
+```powershell
+curl -Uri "http://localhost:3000/login" -Method POST -Body '{"user":"teste","password":"123"}' -ContentType "application/json"
+```
+
+**Resposta:**
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+### Como usar o token JWT
+
+Inclua o token retornado no header `Authorization` das requisições para rotas protegidas:
+
+**Exemplo usando PowerShell:**
+```powershell
+curl -Uri "http://localhost:3000/all/MXRF11" -Headers @{Authorization="Bearer SEU_TOKEN_AQUI"}
+```
+
+Substitua `SEU_TOKEN_AQUI` pelo token recebido no login.
+
+Se o token for válido, você terá acesso ao endpoint. Caso contrário, receberá erro 401 ou 403.
+
 ## Endpoints
 
-### `GET /all/:ticker`
-Retorna todos os dados principais do papel informado (ação ou FII).
+### `POST /login`
+Gera um token JWT para autenticação. Basta enviar um JSON com `user` e `password`.
+
+**Exemplo de requisição:**
+```json
+{
+  "user": "teste",
+  "password": "123"
+}
+```
+**Exemplo de resposta:**
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+### `GET /all/:ticker` (protegido)
+Retorna todos os dados principais do papel informado (ação ou FII). Requer header Authorization com Bearer token.
 
 **Exemplo de resposta:**
 ```json
@@ -112,4 +162,4 @@ Cada pasta tem uma responsabilidade específica, facilitando a manutenção e ex
 
 ## Observações
 - O parser foi ajustado usando exemplos reais de HTML do Fundamentus para FIIs e ações.
-- O endpoint pode ser expandido para retornar mais indicadores facilmente. 
+- O endpoint pode ser expandido para retornar mais indicadores facilmente.

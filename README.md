@@ -68,6 +68,28 @@ Retorna uma descrição de todas as rotas disponíveis e um exemplo de uso.
 }
 ```
 
+## Estrutura de Pastas
+
+```
+backend/
+├── config/
+│   └── default.js           # Configurações centralizadas do projeto
+├── controllers/
+│   └── fundamentusController.js  # Lógica dos controladores das rotas
+├── middlewares/
+│   ├── auth.js              # Middleware de autenticação (exemplo)
+│   └── logger.js            # Middleware de logs
+├── routes/
+│   └── fundamentusRoutes.js # Definição das rotas da API
+├── services/
+│   └── fundamentusService.js # Lógica de acesso e parsing dos dados do Fundamentus
+├── utils/
+│   └── format.js            # Funções utilitárias de formatação
+└── server.js                # Inicialização do servidor Express
+```
+
+Cada pasta tem uma responsabilidade específica, facilitando a manutenção e expansão do projeto.
+
 ## Como rodar localmente
 
 1. Instale as dependências:

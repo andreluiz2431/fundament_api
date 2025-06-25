@@ -23,7 +23,7 @@
 - [x] Criar uma pasta `utils` para funções utilitárias
 - [x] Adotar uma estrutura `config/` para arquivos de configuração
 - [x] Centralizar variáveis de ambiente em um arquivo `.env`
-- [ ] Documentar a estrutura de pastas no README
+- [x] Documentar a estrutura de pastas no README
 - [ ] Adicionar scripts npm para facilitar tarefas comuns (start, test, lint)
 
 ## 4. Novos Endpoints/Funções

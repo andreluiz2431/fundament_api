@@ -21,7 +21,7 @@
 - [x] Separar arquivos de rotas, controladores e serviços
 - [x] Criar uma pasta `middlewares` para middlewares de autenticação, logs, etc.
 - [x] Criar uma pasta `utils` para funções utilitárias
-- [ ] Adotar uma estrutura `config/` para arquivos de configuração
+- [x] Adotar uma estrutura `config/` para arquivos de configuração
 - [ ] Centralizar variáveis de ambiente em um arquivo `.env`
 - [ ] Documentar a estrutura de pastas no README
 - [ ] Adicionar scripts npm para facilitar tarefas comuns (start, test, lint)

@@ -1,6 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const iconv = require('iconv-lite');
+const config = require('../config/default');
 
 /**
  * Extrai dados do HTML do Fundamentus
@@ -53,7 +54,7 @@ function parseFundamentusHtml(html) {
  * @returns {Promise<{dy: string, pvp: string, nome: string, cotacao: string}>}
  */
 async function getFundamentusData(ticker) {
-  const url = `https://www.fundamentus.com.br/detalhes.php?papel=${ticker.toUpperCase()}`;
+  const url = `${config.fundamentusUrl}${ticker.toUpperCase()}`;
   // Faz o request como buffer para tratar encoding
   const response = await axios.get(url, {
     headers: { 'User-Agent': 'Mozilla/5.0' },
